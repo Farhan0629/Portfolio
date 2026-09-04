@@ -1,0 +1,185 @@
+/* ==========================================================================
+   overlays.css — cursor glow, scroll-to-top, carousel controls
+   ========================================================================== */
+
+/* ---------- Ambient pointer light ---------------------------------------- */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-cursor);
+  width: 34rem;
+  height: 34rem;
+  margin: -17rem 0 0 -17rem;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: screen;
+  background: radial-gradient(
+    circle,
+    rgba(85, 242, 62, 0.15),
+    rgba(85, 242, 62, 0.05) 40%,
+    transparent 66%
+  );
+  will-change: transform;
+  transition: opacity var(--dur-slow) var(--ease-out), scale var(--dur-slow) var(--ease-out);
+}
+
+.cursor-glow.is-visible {
+  opacity: 1;
+}
+
+.cursor-glow.is-hot {
+  scale: 1.22;
+}
+
+/* Pointer light is meaningless without a fine pointer. */
+@media (hover: none), (pointer: coarse) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
+/* ---------- Scroll to top ------------------------------------------------- */
+.to-top {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2.25rem);
+  bottom: clamp(1rem, 3vw, 2.25rem);
+  z-index: var(--z-fab);
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 1px solid var(--line-hi);
+  border-radius: 50%;
+  background: rgba(8, 13, 6, 0.82);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  font-size: 1.2rem;
+  opacity: 0;
+  translate: 0 1rem;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease-out), translate var(--dur) var(--ease-out),
+    color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out);
+}
+
+.to-top.is-visible {
+  opacity: 1;
+  translate: 0 0;
+  pointer-events: auto;
+}
+
+.to-top:hover {
+  color: var(--accent);
+  border-color: var(--line-accent);
+  box-shadow: var(--glow-sm);
+}
+
+.to-top i {
+  position: relative;
+  z-index: 1;
+  transition: translate var(--dur) var(--ease-out);
+}
+
+.to-top:hover i {
+  translate: 0 -2px;
+}
+
+/* Scroll progress ring */
+.to-top__ring {
+  position: absolute;
+  inset: -1px;
+  rotate: -90deg;
+  overflow: visible;
+}
+
+.to-top__ring circle {
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.to-top__track {
+  stroke: rgba(244, 244, 240, 0.08);
+}
+
+.to-top__bar {
+  stroke: var(--accent);
+  stroke-linecap: round;
+  transition: stroke-dashoffset 120ms linear;
+}
+
+/* ---------- Carousel controls -------------------------------------------- */
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-5);
+  margin-block-start: clamp(2rem, 4vw, 3rem);
+}
+
+.carousel-btn {
+  display: grid;
+  place-items: center;
+  width: 2.85rem;
+  height: 2.85rem;
+  border: 1px solid var(--line-hi);
+  border-radius: 50%;
+  color: var(--text);
+  font-size: 1.2rem;
+  transition: color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out),
+    background-color var(--dur) var(--ease-out), scale var(--dur) var(--ease-out);
+}
+
+.carousel-btn:hover {
+  color: var(--accent);
+  border-color: var(--line-accent);
+  background: var(--accent-05);
+  scale: 1.05;
+}
+
+.carousel-btn.swiper-button-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ---------- Swiper skin --------------------------------------------------- */
+/* The bullets live outside the carousel (in .works__controls), so Swiper's
+   own "pin me to the bottom of the slider" rules have to be undone. Those
+   rules use two classes, hence the doubled-up selector here. */
+.swiper-pagination,
+.swiper-pagination.swiper-pagination-horizontal {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: auto;
+  inset: auto;
+}
+
+.swiper-pagination-bullet {
+  width: 0.45rem;
+  height: 0.45rem;
+  margin: 0 !important;
+  background: rgba(85, 242, 62, 0.24);
+  opacity: 1;
+  transition: background-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out),
+    scale var(--dur) var(--ease-out);
+}
+
+.swiper-pagination-bullet:hover {
+  background: rgba(85, 242, 62, 0.55);
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--accent);
+  scale: 1.35;
+  box-shadow: 0 0 12px rgba(85, 242, 62, 0.75);
+}

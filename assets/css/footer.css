@@ -1,0 +1,69 @@
+/* ==========================================================================
+   footer.css — restrained closing block
+   ========================================================================== */
+
+.footer {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(2.5rem, 6vw, 4rem) clamp(1.75rem, 3vw, 2.25rem);
+  border-block-start: 1px solid var(--line);
+  background: linear-gradient(180deg, transparent, rgba(85, 242, 62, 0.03));
+}
+
+.footer__top {
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  align-items: start;
+  margin-block-end: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.footer__tagline {
+  margin-block-start: 0.9rem;
+  max-width: 34ch;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+}
+
+.footer__nav a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: color var(--dur) var(--ease-out);
+}
+
+.footer__nav a:hover {
+  color: var(--accent);
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-block-start: clamp(1.25rem, 2.5vw, 1.75rem);
+  border-block-start: 1px solid var(--line);
+  color: var(--muted-dim);
+  font-size: 0.82rem;
+}
+
+.footer__bottom .mono {
+  font-size: 0.68rem;
+}
+
+@media (min-width: 820px) {
+  .footer__top {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr) auto;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}

@@ -1,0 +1,259 @@
+/* ==========================================================================
+   contact.css — form, contact cards, social row
+   ========================================================================== */
+
+.ambient--contact {
+  --ambient-size: min(36rem, 105vw);
+  --ambient-alpha: 0.13;
+  top: 10%;
+  right: -16%;
+}
+
+.contact__grid {
+  display: grid;
+  gap: clamp(1.5rem, 3.5vw, 2.5rem);
+  align-items: start;
+}
+
+/* ---------- Form --------------------------------------------------------- */
+.contact__form {
+  display: grid;
+  gap: 1.1rem;
+  padding: clamp(1.4rem, 3vw, 2.25rem);
+}
+
+.field {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.field label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg-input);
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out),
+    background-color var(--dur) var(--ease-out);
+}
+
+.field textarea {
+  min-height: 10.5rem;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--muted-dim);
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: var(--line-hi);
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  background: #0b1207;
+  box-shadow: 0 0 0 3px var(--accent-10);
+}
+
+.field.has-error input,
+.field.has-error textarea {
+  border-color: var(--danger);
+}
+
+.field__err {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--danger);
+  font-size: 0.8rem;
+}
+
+/* Errors are never signalled by colour alone: there is an icon and text. */
+.field__err i {
+  flex: none;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+
+.form__submit {
+  margin-block-start: 0.35rem;
+}
+
+.form__submit .ri-loader-4-line {
+  animation: spin 0.9s linear infinite;
+}
+
+.form__status {
+  display: none;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.form__status.is-shown {
+  display: flex;
+  animation: rise-in 0.45s var(--ease-out) both;
+}
+
+.form__status.is-ok {
+  border-color: var(--line-accent);
+  background: var(--accent-05);
+  color: var(--accent);
+}
+
+.form__status.is-bad {
+  border-color: rgba(255, 122, 104, 0.35);
+  background: rgba(255, 122, 104, 0.07);
+  color: #ffb3a8;
+}
+
+/* Neither success nor failure: "nothing was sent, here is why". */
+.form__status.is-info {
+  border-color: var(--line-hi);
+  background: rgba(244, 244, 240, 0.03);
+  color: var(--muted);
+}
+
+.form__status a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.form__status i {
+  flex: none;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.form__hint {
+  color: var(--muted-dim);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+/* ---------- Contact cards ------------------------------------------------ */
+.contact__side {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact__cards {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.05rem 1.15rem;
+  border-radius: var(--r-lg);
+  transition: border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out),
+    translate var(--dur) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .info:hover {
+    translate: 0 -2px;
+    border-color: var(--line-accent);
+    box-shadow: var(--shadow-card), var(--glow-sm);
+  }
+}
+
+.info__ico {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line-accent);
+  border-radius: 0.85rem;
+  background: var(--accent-05);
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.info__label {
+  display: block;
+  color: var(--muted-dim);
+}
+
+.info__value {
+  display: block;
+  margin-block-start: 0.25rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.info:hover .arrow-btn--ghost {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ---------- Social row ---------------------------------------------------- */
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-block-start: 0.35rem;
+}
+
+.social {
+  display: grid;
+  place-items: center;
+  width: 2.85rem;
+  height: 2.85rem;
+  border: 1px solid var(--line-hi);
+  border-radius: 50%;
+  color: var(--muted);
+  font-size: 1.2rem;
+  transition: color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out),
+    background-color var(--dur) var(--ease-out), translate var(--dur) var(--ease-out);
+}
+
+.social:hover {
+  color: var(--accent);
+  border-color: var(--line-accent);
+  background: var(--accent-05);
+  translate: 0 -2px;
+}
+
+.contact__availability {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px dashed var(--line-accent);
+  border-radius: var(--r-lg);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (min-width: 960px) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  }
+}

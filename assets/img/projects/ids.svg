@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 880" width="1280" height="880">
+  <!-- Intrusion Detection System — packet flow with two flagged anomalies,
+       a radar sweep and a signature strip. Palette matches variables.css. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1407"/>
+      <stop offset=".55" stop-color="#060b05"/>
+      <stop offset="1" stop-color="#050804"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#55F23E" stop-opacity=".30"/>
+      <stop offset=".55" stop-color="#55F23E" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#55F23E" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#F4F4F0" stroke-opacity=".045"/>
+    </pattern>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="880" fill="url(#bg)"/>
+  <rect width="1280" height="880" fill="url(#grid)"/>
+  <ellipse cx="960" cy="430" rx="520" ry="430" fill="url(#glow)"/>
+
+  <!-- Radar sweep, anchored off the right edge -->
+  <g fill="none" stroke="#55F23E">
+    <path d="M1240 340a180 180 0 0 0 0 360" stroke-opacity=".20" stroke-width="2"/>
+    <path d="M1240 260a260 260 0 0 0 0 520" stroke-opacity=".14" stroke-width="2"/>
+    <path d="M1240 170a350 350 0 0 0 0 700" stroke-opacity=".09" stroke-width="2"/>
+  </g>
+
+  <!-- Packet trains: dashes of uneven length, one match highlighted -->
+  <g stroke="#55F23E" stroke-width="7" stroke-linecap="round">
+    <path d="M90 170h64M172 170h32M222 170h96M336 170h24M378 170h140M536 170h40M594 170h72M684 170h28M730 170h108M856 170h48M922 170h78" stroke-opacity=".18"/>
+    <path d="M90 240h40M148 240h108M274 240h36M328 240h64M410 240h132M624 240h84M726 240h32M776 240h116M910 240h56M984 240h16" stroke-opacity=".26"/>
+    <path d="M90 310h96M204 310h28M250 310h56M324 310h116M458 310h44M520 310h76M614 310h24M656 310h132M806 310h40M864 310h96" stroke-opacity=".14"/>
+  </g>
+  <path d="M560 240h46" stroke="#55F23E" stroke-width="9" stroke-linecap="round" filter="url(#soft)"/>
+  <path d="M560 240h46" stroke="#55F23E" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Markers dropped on the two anomalies -->
+  <g fill="none" stroke="#55F23E" stroke-opacity=".22" stroke-width="2" stroke-dasharray="8 12">
+    <path d="M700 130v620"/>
+    <path d="M980 130v620"/>
+  </g>
+
+  <!-- Flow signal -->
+  <polyline fill="none" stroke="#55F23E" stroke-opacity=".9" stroke-width="3"
+    stroke-linejoin="round" stroke-linecap="round"
+    points="200,470 230,462 250,478 275,466 300,472 325,458 350,476 380,468
+            405,455 430,474 455,464 480,472 505,460 530,478 560,466 585,470
+            600,472 620,464 640,468 660,455 680,420 700,338 720,420 740,455
+            760,468 790,470 815,462 840,476 865,466 890,472 915,458 940,466
+            955,440 968,392 980,334 992,392 1005,440 1020,466 1045,472
+            1070,462 1095,474 1120,466 1145,472 1180,468"/>
+
+  <!-- Reticles on each peak -->
+  <g fill="none" stroke="#55F23E">
+    <circle cx="700" cy="338" r="13" fill="#55F23E" filter="url(#soft)"/>
+    <circle cx="980" cy="334" r="13" fill="#55F23E" filter="url(#soft)"/>
+    <circle cx="700" cy="338" r="6" fill="#55F23E" stroke="none"/>
+    <circle cx="980" cy="334" r="6" fill="#55F23E" stroke="none"/>
+    <path d="M668 316v-14h14M732 316v-14h-14M668 360v14h14M732 360v14h-14"
+      stroke-opacity=".85" stroke-width="3"/>
+    <path d="M948 312v-14h14M1012 312v-14h-14M948 356v14h14M1012 356v14h-14"
+      stroke-opacity=".85" stroke-width="3"/>
+  </g>
+
+  <!-- Signature strip: rule hits per window -->
+  <g fill="#55F23E">
+    <g fill-opacity=".22">
+      <rect x="520" y="704" width="10" height="36" rx="5"/>
+      <rect x="548" y="686" width="10" height="54" rx="5"/>
+      <rect x="576" y="716" width="10" height="24" rx="5"/>
+      <rect x="604" y="672" width="10" height="68" rx="5"/>
+      <rect x="632" y="700" width="10" height="40" rx="5"/>
+      <rect x="660" y="712" width="10" height="28" rx="5"/>
+      <rect x="716" y="694" width="10" height="46" rx="5"/>
+      <rect x="744" y="722" width="10" height="18" rx="5"/>
+      <rect x="772" y="680" width="10" height="60" rx="5"/>
+      <rect x="800" y="708" width="10" height="32" rx="5"/>
+      <rect x="856" y="716" width="10" height="24" rx="5"/>
+      <rect x="884" y="690" width="10" height="50" rx="5"/>
+      <rect x="912" y="704" width="10" height="36" rx="5"/>
+      <rect x="940" y="726" width="10" height="14" rx="5"/>
+      <rect x="996" y="698" width="10" height="42" rx="5"/>
+      <rect x="1024" y="718" width="10" height="22" rx="5"/>
+      <rect x="1052" y="684" width="10" height="56" rx="5"/>
+      <rect x="1080" y="710" width="10" height="30" rx="5"/>
+      <rect x="1108" y="694" width="10" height="46" rx="5"/>
+      <rect x="1136" y="724" width="10" height="16" rx="5"/>
+    </g>
+    <rect x="688" y="650" width="10" height="90" rx="5" fill-opacity=".95"/>
+    <rect x="968" y="658" width="10" height="82" rx="5" fill-opacity=".95"/>
+    <rect x="828" y="706" width="10" height="34" rx="5" fill-opacity=".45"/>
+  </g>
+  <path d="M500 754h660" stroke="#55F23E" stroke-opacity=".28" stroke-width="2"/>
+
+  <g fill="none" stroke="#55F23E" stroke-opacity=".45" stroke-width="3">
+    <path d="M56 100V56h44"/>
+    <path d="M1224 780v44h-44"/>
+  </g>
+</svg>

@@ -1,0 +1,166 @@
+/* ==========================================================================
+   skills.css — full-width skill category cards with real technology logos
+   ========================================================================== */
+
+.ambient--skills {
+  --ambient-size: min(38rem, 105vw);
+  --ambient-alpha: 0.11;
+  top: 24%;
+  right: -20%;
+}
+
+.skills__grid {
+  display: grid;
+  gap: clamp(1rem, 2.2vw, 1.5rem);
+}
+
+.s-card {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  padding: clamp(1.4rem, 3vw, 2.25rem);
+  transition: border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .s-card:hover {
+    border-color: var(--line-accent);
+    box-shadow: var(--shadow-card), var(--glow-md);
+  }
+}
+
+.s-card__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.s-card__ico {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 3.15rem;
+  height: 3.15rem;
+  border: 1px solid var(--line-accent);
+  border-radius: 1rem;
+  background: var(--accent-05);
+  color: var(--accent);
+  font-size: 1.55rem;
+}
+
+.s-card__title {
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.s-card__count {
+  display: block;
+  margin-block-start: 0.4rem;
+  color: var(--muted-dim);
+}
+
+.s-card__blurb {
+  margin-block-start: 0.85rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 34ch;
+}
+
+/* The category flagged as `featured` in skills.js — carries a little more
+   light, because this is the specialism the site is about. */
+.s-card--featured {
+  border-color: var(--line-accent);
+  background: linear-gradient(180deg, var(--bg-card-hi), #070c06);
+}
+
+.s-card--featured .s-card__ico {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: var(--glow-sm);
+}
+
+.s-card__flag {
+  display: inline-flex;
+  margin-block-start: 0.6rem;
+}
+
+/* ---------- Technology chips --------------------------------------------- */
+.s-card__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 0.55rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: rgba(244, 244, 240, 0.025);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1;
+  transition: color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out),
+    background-color var(--dur) var(--ease-out), translate var(--dur) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .chip:hover {
+    color: var(--text);
+    border-color: var(--line-accent);
+    background: var(--accent-05);
+    translate: 0 -2px;
+  }
+}
+
+/* Logo slot: monogram by default, real SVG mask once the logo has loaded. */
+.chip__logo {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  transition: color var(--dur) var(--ease-out);
+}
+
+.chip__logo::before {
+  content: attr(data-mono);
+}
+
+.chip__logo.has-logo {
+  background-color: currentColor;
+  color: var(--text);
+  -webkit-mask: var(--logo) center / contain no-repeat;
+  mask: var(--logo) center / contain no-repeat;
+}
+
+.chip__logo.has-logo::before {
+  content: none;
+}
+
+.chip:hover .chip__logo {
+  color: var(--brand, var(--accent));
+}
+
+.chip__ri {
+  flex: none;
+  color: var(--accent);
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+@media (min-width: 820px) {
+  .s-card {
+    grid-template-columns: minmax(0, 0.34fr) minmax(0, 0.66fr);
+    align-items: start;
+  }
+}

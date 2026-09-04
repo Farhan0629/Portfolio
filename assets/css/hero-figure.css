@@ -1,0 +1,166 @@
+/* ==========================================================================
+   hero-figure.css — layered portrait composition + rotating explore CTA
+   ========================================================================== */
+
+.hero__figure {
+  position: relative;
+  padding: clamp(1rem, 3vw, 2.25rem);
+  animation: rise-in 1s var(--ease-out) both;
+  animation-delay: 0.55s;
+}
+
+.figure {
+  position: relative;
+  width: min(100%, 25rem);
+  margin-inline: auto;
+  aspect-ratio: 4 / 5;
+}
+
+/* Soft light pooling behind the portrait */
+.figure__glow {
+  position: absolute;
+  inset: -18% -14%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(85, 242, 62, 0.22), transparent 62%);
+  pointer-events: none;
+}
+
+/* Layer 1 — dark plate */
+.figure__back {
+  position: absolute;
+  inset: 7% -7% -5% 9%;
+  border: 1px solid var(--line);
+  border-radius: var(--r-2xl);
+  background: linear-gradient(160deg, #101c0b, #060a05);
+  rotate: 5deg;
+}
+
+/* Layer 2 — accent outline plate */
+.figure__mid {
+  position: absolute;
+  inset: 3% 6% 3% -7%;
+  border: 1px solid var(--line-accent);
+  border-radius: var(--r-2xl);
+  background: rgba(85, 242, 62, 0.035);
+  rotate: -8deg;
+}
+
+/* Layer 3 — the photo card */
+.figure__card {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 1px solid var(--line-hi);
+  border-radius: var(--r-2xl);
+  background: var(--bg-card);
+  rotate: -3deg;
+  box-shadow: 0 50px 90px -55px rgba(0, 0, 0, 1);
+  animation: figure-float 7s var(--ease-soft) infinite alternate;
+}
+
+.figure__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  scale: 1.02;
+  transition: scale var(--dur-slow) var(--ease-out);
+}
+
+.figure:hover .figure__card img {
+  scale: 1.05;
+}
+
+/* Technical caption on the card */
+.figure__tag {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--line-hi);
+  border-radius: var(--r-pill);
+  background: rgba(5, 8, 4, 0.72);
+  backdrop-filter: blur(8px);
+  color: var(--text);
+}
+
+.figure__tag i {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+@keyframes figure-float {
+  from {
+    translate: 0 -0.4rem;
+  }
+  to {
+    translate: 0 0.5rem;
+  }
+}
+
+/* ---------- Rotating "explore more" CTA ---------------------------------- */
+.explore {
+  position: absolute;
+  z-index: 3;
+  left: -5%;
+  bottom: -6%;
+  display: grid;
+  place-items: center;
+  width: clamp(7rem, 13vw, 9.25rem);
+  aspect-ratio: 1;
+  border: 1px solid var(--line-accent);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(5, 8, 4, 0.92), rgba(5, 8, 4, 0.6));
+  backdrop-filter: blur(6px);
+}
+
+.explore__ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: spin 22s linear infinite;
+}
+
+.explore__ring text {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  fill: var(--accent);
+  text-transform: uppercase;
+}
+
+.explore__btn {
+  display: grid;
+  place-items: center;
+  width: 42%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.2rem;
+  transition: background-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}
+
+.explore__btn i {
+  transition: translate var(--dur) var(--ease-out);
+}
+
+.explore:hover .explore__btn {
+  background: var(--accent-hi);
+  box-shadow: var(--glow-sm);
+}
+
+.explore:hover .explore__btn i {
+  translate: 0 0.2rem;
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}

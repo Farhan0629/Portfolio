@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 880" width="1280" height="880">
+  <!-- JharUdyam — scattered citizen reports clustered by AI, then routed to
+       the stakeholder lane that can act. Palette matches variables.css. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1407"/>
+      <stop offset=".55" stop-color="#060b05"/>
+      <stop offset="1" stop-color="#050804"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#55F23E" stop-opacity=".30"/>
+      <stop offset=".55" stop-color="#55F23E" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#55F23E" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#F4F4F0" stroke-opacity=".045"/>
+    </pattern>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="880" fill="url(#bg)"/>
+  <rect width="1280" height="880" fill="url(#grid)"/>
+  <ellipse cx="640" cy="420" rx="560" ry="440" fill="url(#glow)"/>
+  <ellipse cx="1040" cy="470" rx="240" ry="210" fill="url(#glow)"/>
+
+  <!-- Reports coming in -->
+  <g fill="#55F23E" fill-opacity=".30">
+    <circle cx="104" cy="212" r="6"/><circle cx="168" cy="286" r="5"/>
+    <circle cx="122" cy="358" r="6"/><circle cx="206" cy="188" r="5"/>
+    <circle cx="238" cy="262" r="6"/><circle cx="150" cy="452" r="5"/>
+    <circle cx="228" cy="404" r="6"/><circle cx="300" cy="234" r="5"/>
+    <circle cx="318" cy="330" r="6"/><circle cx="106" cy="530" r="5"/>
+    <circle cx="192" cy="560" r="6"/><circle cx="268" cy="486" r="5"/>
+    <circle cx="352" cy="424" r="6"/><circle cx="134" cy="636" r="5"/>
+    <circle cx="216" cy="672" r="6"/><circle cx="288" cy="596" r="5"/>
+    <circle cx="366" cy="530" r="6"/><circle cx="330" cy="704" r="5"/>
+    <circle cx="398" cy="622" r="6"/><circle cx="404" cy="290" r="5"/>
+  </g>
+
+  <!-- Lines pulling like reports toward a cluster centre -->
+  <g stroke="#55F23E" stroke-opacity=".14" stroke-width="2">
+    <path d="M206 188 520 270M300 234 520 270M404 290 520 270M238 262 520 270"/>
+    <path d="M352 424 560 470M268 486 560 470M366 530 560 470M228 404 560 470"/>
+    <path d="M330 704 520 690M398 622 520 690M288 596 520 690M216 672 520 690"/>
+  </g>
+
+  <!-- Clusters -->
+  <g fill="none" stroke="#55F23E">
+    <circle cx="520" cy="270" r="84" stroke-opacity=".45" stroke-width="2"/>
+    <circle cx="560" cy="470" r="104" stroke-opacity=".55" stroke-width="2.5"/>
+    <circle cx="520" cy="690" r="78" stroke-opacity=".45" stroke-width="2"/>
+    <circle cx="520" cy="270" r="104" stroke-opacity=".14" stroke-width="2" stroke-dasharray="5 11"/>
+    <circle cx="560" cy="470" r="126" stroke-opacity=".16" stroke-width="2" stroke-dasharray="5 11"/>
+    <circle cx="520" cy="690" r="98" stroke-opacity=".14" stroke-width="2" stroke-dasharray="5 11"/>
+  </g>
+  <g fill="#55F23E" fill-opacity=".8">
+    <circle cx="494" cy="248" r="7"/><circle cx="542" cy="262" r="7"/>
+    <circle cx="512" cy="300" r="7"/><circle cx="548" cy="222" r="6"/>
+    <circle cx="530" cy="440" r="7"/><circle cx="586" cy="452" r="7"/>
+    <circle cx="556" cy="498" r="7"/><circle cx="602" cy="504" r="6"/>
+    <circle cx="522" cy="428" r="6"/>
+    <circle cx="500" cy="672" r="7"/><circle cx="544" cy="686" r="7"/>
+    <circle cx="514" cy="716" r="6"/>
+  </g>
+
+  <!-- Routed to a stakeholder -->
+  <g fill="none" stroke="#55F23E" stroke-width="2.5">
+    <path d="M604 270Q752 246 898 288" stroke-opacity=".45"/>
+    <path d="M664 470Q782 470 898 470" stroke-opacity=".85"/>
+    <path d="M598 690Q752 704 898 652" stroke-opacity=".45"/>
+  </g>
+  <g fill="#55F23E">
+    <path d="M904 288 884 278v20z" fill-opacity=".6"/>
+    <path d="M906 470 882 458v24z"/>
+    <path d="M904 652 884 642v20z" fill-opacity=".6"/>
+  </g>
+
+  <!-- Stakeholder lanes; the one taking the case is lit -->
+  <g fill="none" stroke="#55F23E">
+    <rect x="920" y="250" width="264" height="76" rx="38" stroke-opacity=".28" stroke-width="2"/>
+    <rect x="920" y="614" width="264" height="76" rx="38" stroke-opacity=".28" stroke-width="2"/>
+  </g>
+  <rect x="920" y="432" width="264" height="76" rx="38" fill="#55F23E" fill-opacity=".10"
+    stroke="#55F23E" stroke-opacity=".9" stroke-width="2.5"/>
+  <g stroke="#55F23E" stroke-width="7" stroke-linecap="round" stroke-opacity=".22">
+    <path d="M956 288h52M1024 288h74M1114 288h34"/>
+    <path d="M956 652h74M1046 652h40M1102 652h46"/>
+  </g>
+  <g stroke="#55F23E" stroke-width="7" stroke-linecap="round">
+    <path d="M990 470h58M1064 470h84" stroke-opacity=".55"/>
+  </g>
+  <circle cx="962" cy="470" r="16" fill="#55F23E" filter="url(#soft)"/>
+  <circle cx="962" cy="470" r="9" fill="#55F23E"/>
+
+  <g fill="none" stroke="#55F23E" stroke-opacity=".45" stroke-width="3">
+    <path d="M56 100V56h44"/>
+    <path d="M1224 780v44h-44"/>
+  </g>
+</svg>

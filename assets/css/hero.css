@@ -1,0 +1,172 @@
+/* ==========================================================================
+   hero.css — full-height hero, typed role line, entry animation
+   ========================================================================== */
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-block: calc(var(--header-h) + clamp(2rem, 5vw, 3.5rem)) clamp(3rem, 7vw, 6rem);
+}
+
+.hero__inner {
+  display: grid;
+  gap: clamp(3rem, 6vw, var(--gap-col));
+  align-items: center;
+}
+
+.ambient--hero {
+  --ambient-size: min(46rem, 120vw);
+  --ambient-alpha: 0.18;
+  top: -14%;
+  right: -12%;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1.1rem, 2vw, 1.6rem);
+  max-width: 40rem;
+}
+
+/* ---------- Availability line -------------------------------------------- */
+.hero__intro {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: rgba(244, 244, 240, 0.02);
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.hero__intro strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.hero__pulse {
+  position: relative;
+  flex: none;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hero__pulse::after {
+  content: "";
+  position: absolute;
+  inset: -0.25rem;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  animation: pulse-ring 2.6s var(--ease-out) infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    opacity: 0.7;
+    scale: 0.6;
+  }
+  70%,
+  100% {
+    opacity: 0;
+    scale: 1.5;
+  }
+}
+
+/* ---------- Headline ------------------------------------------------------ */
+.hero__title {
+  font-size: var(--fs-hero);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-tight);
+  text-wrap: normal;
+}
+
+.hero__line {
+  display: block;
+}
+
+.hero__amp {
+  color: var(--muted-dim);
+  font-weight: 400;
+}
+
+/* ---------- Typed role line ---------------------------------------------- */
+.hero__roles {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.85rem;
+  min-height: 2.4em;
+  margin-block-start: -0.25rem;
+}
+
+.hero__roles-label {
+  color: var(--muted-dim);
+  white-space: nowrap;
+}
+
+.hero__typed {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.3vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
+.typed-cursor {
+  color: var(--accent);
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* ---------- Supporting copy + actions ------------------------------------ */
+.hero__subtitle {
+  max-width: 46ch;
+  color: var(--muted);
+  font-size: var(--fs-lead);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-block-start: 0.35rem;
+}
+
+.hero__meta {
+  width: 100%;
+  margin-block-start: clamp(1.25rem, 3vw, 2rem);
+  padding-block-start: clamp(1.25rem, 3vw, 1.75rem);
+  border-block-start: 1px solid var(--line);
+}
+
+/* ---------- Staggered entry ---------------------------------------------- */
+.rise {
+  animation: rise-in 0.85s var(--ease-out) both;
+  animation-delay: var(--d, 0s);
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    translate: 0 1.6rem;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+}

@@ -1,0 +1,258 @@
+/* ==========================================================================
+   header.css — fixed header, centred nav with active dot, mobile panel
+   ========================================================================== */
+
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: var(--z-header);
+}
+
+.header__shell {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--sp-5);
+  height: var(--header-h);
+  padding-inline: 0;
+  border: 1px solid transparent;
+  border-radius: var(--r-pill);
+  transition: height var(--dur) var(--ease-out), margin var(--dur) var(--ease-out),
+    padding var(--dur) var(--ease-out), background-color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
+}
+
+.header.is-stuck .header__shell {
+  height: calc(var(--header-h) - 1.15rem);
+  margin-block-start: 0.7rem;
+  padding-inline: clamp(0.9rem, 1.8vw, 1.4rem);
+  background: rgba(8, 13, 6, 0.74);
+  backdrop-filter: blur(16px) saturate(150%);
+  border-color: var(--line);
+  box-shadow: 0 24px 48px -34px rgba(0, 0, 0, 0.95);
+}
+
+/* ---------- Brand -------------------------------------------------------- */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.brand__mark {
+  display: grid;
+  place-items: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  border: 1px solid var(--line-accent);
+  border-radius: 0.7rem;
+  background: var(--accent-05);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out);
+}
+
+.brand:hover .brand__mark {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow: var(--glow-sm);
+}
+
+/* ---------- Navigation --------------------------------------------------- */
+.nav {
+  justify-self: center;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.35rem, 1.6vw, 1.6rem);
+}
+
+.nav__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.35rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: color var(--dur) var(--ease-out);
+}
+
+.nav__link:hover {
+  color: var(--text);
+}
+
+.nav__dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  scale: 0.3;
+  transition: opacity var(--dur) var(--ease-out), scale var(--dur) var(--ease-out);
+}
+
+.nav__link[aria-current="true"] {
+  color: var(--text);
+}
+
+.nav__link[aria-current="true"] .nav__dot {
+  opacity: 1;
+  scale: 1;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* ---------- Right-hand actions ------------------------------------------- */
+.nav__toggle,
+.nav__close {
+  display: none;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--line-hi);
+  border-radius: 50%;
+  color: var(--text);
+  font-size: 1.25rem;
+  transition: color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out),
+    background-color var(--dur) var(--ease-out);
+}
+
+.nav__toggle:hover,
+.nav__close:hover {
+  color: var(--accent);
+  border-color: var(--line-accent);
+  background: var(--accent-05);
+}
+
+/* The Contact link lives in the header CTA on desktop, so it is only listed
+   inside the mobile panel. */
+.nav__item--mobile {
+  display: none;
+}
+
+.nav__foot {
+  display: none;
+}
+
+.nav__mail {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+  transition: color var(--dur) var(--ease-out);
+}
+
+.nav__mail:hover {
+  color: var(--accent);
+}
+
+/* ---------- Mobile / tablet panel ---------------------------------------- */
+@media (max-width: 1023px) {
+  .header__shell {
+    grid-template-columns: auto 1fr;
+  }
+
+  .header__cta {
+    display: none;
+  }
+
+  .nav__toggle,
+  .nav__close {
+    display: grid;
+  }
+
+  .nav__toggle {
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  .nav__item--mobile {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-menu);
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: calc(var(--header-h) + 1.5rem) var(--pad-x) 2.25rem;
+    background: rgba(4, 7, 3, 0.94);
+    backdrop-filter: blur(20px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--dur-slow) var(--ease-out), visibility var(--dur-slow) linear;
+  }
+
+  .nav.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: center;
+    gap: 0.15rem;
+  }
+
+  .nav__link {
+    padding: 0.4rem 0;
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 7.5vw, 2.4rem);
+    font-weight: 600;
+    letter-spacing: var(--track-tight);
+    color: var(--text);
+    opacity: 0;
+    translate: 0 0.9rem;
+    transition: opacity var(--dur-slow) var(--ease-out), translate var(--dur-slow) var(--ease-out),
+      color var(--dur) var(--ease-out);
+  }
+
+  .nav.is-open .nav__link {
+    opacity: 1;
+    translate: 0 0;
+    transition-delay: calc(var(--i, 0) * 55ms);
+  }
+
+  .nav__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  .nav__close {
+    position: absolute;
+    top: calc((var(--header-h) - 2.75rem) / 2);
+    right: var(--pad-x);
+  }
+
+  .nav__foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-4);
+    padding-block-start: var(--sp-5);
+    border-block-start: 1px solid var(--line);
+  }
+
+  /* The shared .socials row carries a small top margin for the contact
+     column; inside this footer the flex gap already handles it. Two classes
+     deep so it wins over contact.css, which loads later. */
+  .nav__foot .socials--nav {
+    gap: 0.5rem;
+    margin-block-start: 0;
+  }
+}

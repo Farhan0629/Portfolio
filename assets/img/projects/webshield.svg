@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 880" width="1280" height="880">
+  <!-- WebShield — a request to a flagged site stopped at the barrier before
+       the page can load. Palette matches variables.css. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1407"/>
+      <stop offset=".55" stop-color="#060b05"/>
+      <stop offset="1" stop-color="#050804"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#55F23E" stop-opacity=".30"/>
+      <stop offset=".55" stop-color="#55F23E" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#55F23E" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#F4F4F0" stroke-opacity=".045"/>
+    </pattern>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="880" fill="url(#bg)"/>
+  <rect width="1280" height="880" fill="url(#grid)"/>
+  <ellipse cx="420" cy="400" rx="440" ry="400" fill="url(#glow)"/>
+  <ellipse cx="990" cy="452" rx="265" ry="255" fill="url(#glow)"/>
+
+  <!-- Browser -->
+  <rect x="120" y="150" width="880" height="580" rx="26" fill="#55F23E" fill-opacity=".02"
+    stroke="#55F23E" stroke-opacity=".30" stroke-width="2.5"/>
+  <path d="M120 232h880" stroke="#55F23E" stroke-opacity=".22" stroke-width="2"/>
+  <g fill="#55F23E" fill-opacity=".30">
+    <circle cx="170" cy="191" r="8"/><circle cx="202" cy="191" r="8"/><circle cx="234" cy="191" r="8"/>
+  </g>
+  <rect x="278" y="169" width="512" height="44" rx="22" fill="none"
+    stroke="#55F23E" stroke-opacity=".25" stroke-width="2"/>
+  <g stroke="#55F23E" stroke-width="6" stroke-linecap="round" stroke-opacity=".26">
+    <path d="M312 191h74M400 191h122M536 191h44M594 191h86"/>
+  </g>
+
+  <!-- Page the request was for -->
+  <g stroke="#55F23E" stroke-width="7" stroke-linecap="round" stroke-opacity=".13">
+    <path d="M170 292h188M372 292h96M482 292h142"/>
+    <path d="M170 338h112M296 338h174M484 338h84"/>
+    <path d="M170 384h150M334 384h64M412 384h196"/>
+    <path d="M170 640h96M280 640h134M428 640h72"/>
+    <path d="M170 686h150M334 686h64M412 686h108"/>
+  </g>
+
+  <!-- Requests, and where they stop -->
+  <g stroke="#55F23E" stroke-linecap="round">
+    <path d="M200 396h570" stroke-opacity=".35" stroke-width="2.5"/>
+    <path d="M200 470h570" stroke-opacity=".85" stroke-width="3.5"/>
+    <path d="M200 544h570" stroke-opacity=".35" stroke-width="2.5"/>
+  </g>
+  <path d="M804 300v320" stroke="#55F23E" stroke-opacity=".5" stroke-width="3" stroke-dasharray="10 12"/>
+  <g stroke="#55F23E" stroke-linecap="round" fill="none">
+    <path d="M792 384 816 408M816 384 792 408" stroke-opacity=".5" stroke-width="3"/>
+    <path d="M788 454 820 486M820 454 788 486" stroke-opacity=".95" stroke-width="4"/>
+    <path d="M792 532 816 556M816 532 792 556" stroke-opacity=".5" stroke-width="3"/>
+  </g>
+
+  <!-- The shield in front of it -->
+  <path d="M990 280 1128 336V462C1128 552 1062 610 990 640 918 610 852 552 852 462V336Z"
+    fill="none" stroke="#55F23E" stroke-opacity=".38" stroke-width="7" filter="url(#soft)"/>
+  <path d="M990 280 1128 336V462C1128 552 1062 610 990 640 918 610 852 552 852 462V336Z"
+    fill="#55F23E" fill-opacity=".07" stroke="#55F23E" stroke-opacity=".78" stroke-width="3.5"/>
+  <path d="M990 316 1096 359V466C1096 534 1046 578 990 602 934 578 884 534 884 466V359Z"
+    fill="none" stroke="#55F23E" stroke-opacity=".18" stroke-width="2"/>
+  <circle cx="990" cy="452" r="54" fill="none" stroke="#55F23E" stroke-opacity=".8" stroke-width="4"/>
+  <path d="M952 414 1028 490" stroke="#55F23E" stroke-opacity=".8" stroke-width="4" stroke-linecap="round"/>
+
+  <g fill="none" stroke="#55F23E" stroke-opacity=".45" stroke-width="3">
+    <path d="M56 100V56h44"/>
+    <path d="M1224 780v44h-44"/>
+  </g>
+</svg>

@@ -1,0 +1,139 @@
+/* ==========================================================================
+   responsive.css — breakpoint refinements on top of the fluid base
+   Loaded last so it can adjust anything above it.
+   ========================================================================== */
+
+/* ---------- Small phones (< 576px) --------------------------------------- */
+@media (max-width: 575px) {
+  .hero {
+    min-height: auto;
+    padding-block-end: clamp(2.5rem, 8vw, 4rem);
+  }
+
+  .hero__content {
+    align-items: flex-start;
+  }
+
+  .hero__actions {
+    width: 100%;
+  }
+
+  .hero__actions .btn {
+    flex: 1 1 12rem;
+  }
+
+  .figure {
+    width: min(100%, 20rem);
+  }
+
+  .explore {
+    width: 7rem;
+    left: -3%;
+    bottom: -5%;
+  }
+
+  .section__title,
+  .about__statement {
+    max-width: none;
+  }
+
+  .about__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .acc__trigger {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.75rem;
+  }
+
+  /* The index number is decorative on tiny screens. */
+  .acc__idx {
+    display: none;
+  }
+
+  .acc__inner {
+    padding-inline-start: 0.5rem;
+  }
+
+  .cert {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .cert .tag {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .to-top {
+    width: 2.85rem;
+    height: 2.85rem;
+    font-size: 1.05rem;
+  }
+}
+
+/* ---------- Tablet portrait (576px – 767px) ------------------------------ */
+@media (min-width: 576px) and (max-width: 767px) {
+  .figure {
+    width: min(100%, 22rem);
+  }
+}
+
+/* ---------- Small desktop / tablet landscape (768px – 1023px) ------------ */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
+  }
+
+  .hero__figure {
+    width: min(100%, 30rem);
+    margin-inline: auto;
+  }
+}
+
+/* ---------- Large desktop (1440px+) -------------------------------------- */
+@media (min-width: 1440px) {
+  :root {
+    --container: 1340px;
+    --section-y: clamp(6rem, 8vw, 9.5rem);
+  }
+
+  .figure {
+    width: min(100%, 27rem);
+  }
+}
+
+/* ---------- Very large screens (1800px+) -------------------------------- */
+@media (min-width: 1800px) {
+  :root {
+    --container: 1440px;
+  }
+}
+
+/* ---------- Landscape phones --------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+  }
+}
+
+/* ---------- Print --------------------------------------------------------- */
+@media print {
+  .header,
+  .to-top,
+  .cursor-glow,
+  .explore,
+  body::before,
+  body::after {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #111;
+  }
+}

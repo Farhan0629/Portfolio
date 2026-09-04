@@ -1,0 +1,110 @@
+/* ==========================================================================
+   variables.css — the single source of truth for the design system.
+   Change a value here and it propagates across the whole site.
+   ========================================================================== */
+
+:root {
+  color-scheme: dark;
+
+  /* ---------- Colour ---------------------------------------------------- */
+  --bg: #050804;            /* page background: green-tinted black          */
+  --bg-elev: #080d06;       /* raised panels                                */
+  --bg-card: #0b1109;       /* cards                                        */
+  --bg-card-hi: #0e1610;    /* card hover                                   */
+  --bg-input: #0a0f08;
+
+  --accent: #55f23e;        /* primary neon accent                          */
+  --accent-hi: #6cf957;     /* hover / brighter                             */
+  --accent-dim: #3fbd2e;
+  --accent-ink: #04150a;    /* text placed on top of the accent             */
+
+  --text: #f4f4f0;
+  --muted: #a7aaa3;
+  --muted-dim: #737c71;
+  --danger: #ff7a68;      /* form errors — never signalled by colour alone */
+
+  --line: rgba(244, 244, 240, 0.08);
+  --line-hi: rgba(244, 244, 240, 0.14);
+  --line-accent: rgba(85, 242, 62, 0.28);
+
+  --accent-05: rgba(85, 242, 62, 0.05);
+  --accent-10: rgba(85, 242, 62, 0.1);
+  --accent-16: rgba(85, 242, 62, 0.16);
+  --accent-24: rgba(85, 242, 62, 0.24);
+
+  /* Ambient light + elevation */
+  --glow-sm: 0 0 24px -6px rgba(85, 242, 62, 0.35);
+  --glow-md: 0 22px 60px -30px rgba(85, 242, 62, 0.55);
+  --glow-lg: 0 40px 120px -50px rgba(85, 242, 62, 0.6);
+  --shadow-card: 0 30px 70px -46px rgba(0, 0, 0, 0.9);
+
+  /* ---------- Typography ------------------------------------------------ */
+  /* Swap these three families to re-skin the site's voice. */
+  --font-display: "Sora", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --fs-hero: clamp(2.25rem, 8.5vw, 4.4rem);
+  --fs-h2: clamp(1.9rem, 5.4vw, 3.3rem);
+  --fs-h3: clamp(1.15rem, 1.7vw, 1.4rem);
+  --fs-statement: clamp(1.4rem, 3.2vw, 2.35rem);
+  --fs-lead: clamp(1rem, 1.35vw, 1.1875rem);
+  --fs-body: clamp(0.95rem, 1.05vw, 1.0625rem);
+  --fs-sm: 0.9rem;
+  --fs-xs: 0.78rem;
+  --fs-mono: 0.75rem;
+
+  --lh-tight: 0.98;
+  --lh-snug: 1.2;
+  --lh-body: 1.7;
+  --track-tight: -0.035em;
+  --track-eyebrow: 0.2em;
+
+  /* ---------- Space + layout ------------------------------------------- */
+  --container: 1280px;
+  --pad-x: clamp(1.25rem, 4vw, 3.5rem);
+  --section-y: clamp(4.5rem, 9vw, 8.5rem);
+  --gap-col: clamp(2.25rem, 5vw, 5rem);
+  --header-h: 78px;
+
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 2.5rem;
+  --sp-8: 3rem;
+  --sp-9: 4rem;
+  --sp-10: 6rem;
+
+  /* ---------- Radii ----------------------------------------------------- */
+  --r-xs: 10px;
+  --r-sm: 14px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-xl: 36px;
+  --r-2xl: 44px;
+  --r-pill: 999px;
+
+  /* ---------- Motion ---------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 180ms;
+  --dur: 300ms;
+  --dur-slow: 520ms;
+
+  /* ---------- Depth ordering ------------------------------------------- */
+  --z-glow: 0;
+  --z-base: 1;
+  --z-header: 40;
+  --z-cursor: 45;
+  --z-fab: 50;
+  --z-menu: 60;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-h: 92px;
+  }
+}

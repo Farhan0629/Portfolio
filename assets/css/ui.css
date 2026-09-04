@@ -1,0 +1,178 @@
+/* ==========================================================================
+   ui.css — buttons, arrow buttons, tags, generic card shell
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.75rem;
+  border-radius: var(--r-pill);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out),
+    translate var(--dur) var(--ease-out);
+}
+
+.btn i {
+  font-size: 1.15em;
+  transition: translate var(--dur) var(--ease-out);
+}
+
+.btn:hover i[class*="arrow-right-up"] {
+  translate: 2px -2px;
+}
+
+.btn:hover i[class*="arrow-right-line"],
+.btn:hover i[class*="arrow-right-s"] {
+  translate: 3px 0;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hi);
+  translate: 0 -2px;
+  box-shadow: var(--glow-md), 0 0 0 1px var(--accent-24);
+}
+
+.btn--ghost {
+  border: 1px solid var(--line-hi);
+  background: rgba(244, 244, 240, 0.02);
+  color: var(--text);
+}
+
+.btn--ghost:hover {
+  border-color: var(--line-accent);
+  background: var(--accent-05);
+  color: var(--accent);
+  translate: 0 -2px;
+}
+
+.btn--sm {
+  padding: 0.78rem 1.3rem;
+  font-size: 0.875rem;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn[disabled],
+.btn[aria-disabled="true"] {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* ---------- Circular diagonal-arrow button ------------------------------- */
+.arrow-btn {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.35rem;
+  transition: background-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out),
+    scale var(--dur) var(--ease-out);
+}
+
+.arrow-btn i {
+  transition: translate var(--dur) var(--ease-out);
+}
+
+.arrow-btn:hover {
+  background: var(--accent-hi);
+  scale: 1.06;
+  box-shadow: var(--glow-sm);
+}
+
+.arrow-btn:hover i {
+  translate: 3px -3px;
+}
+
+.arrow-btn--ghost {
+  width: 2.85rem;
+  height: 2.85rem;
+  border: 1px solid var(--line-accent);
+  background: var(--accent-10);
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+.arrow-btn--ghost:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ---------- Tags / pills ------------------------------------------------- */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: rgba(244, 244, 240, 0.03);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.tag--accent {
+  border-color: var(--line-accent);
+  background: var(--accent-05);
+  color: var(--accent);
+}
+
+.tag i {
+  font-size: 1em;
+  color: var(--accent);
+}
+
+/* ---------- Card shell --------------------------------------------------- */
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: linear-gradient(180deg, var(--bg-card), #070c06);
+  box-shadow: var(--shadow-card);
+}
+
+/* Ambient bloom clipped to the card, so it can never cause page overflow. */
+.card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -30% -20% auto auto;
+  width: 68%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-16), transparent 62%);
+  opacity: 0.55;
+  transition: opacity var(--dur-slow) var(--ease-out);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
