@@ -33,7 +33,7 @@ window.initBgCanvas = function () {
   if (window.PF && window.PF.reduced && window.PF.reduced()) return;
 
   /* ---------- Config ------------------------------------------------------ */
-  var ALPHA     = 0.095;               /* 9.5 % master opacity               */
+  var ALPHA     = 0.50;               /* 9.5 % master opacity               */
   var MOBILE    = window.innerWidth < 768;
   var RES       = MOBILE ? 0.5 : 0.75; /* canvas resolution scale            */
   var FADE_SPD  = 0.03;                /* cross-fade speed per frame          */
