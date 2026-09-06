@@ -16,7 +16,7 @@
 
 window.EDUCATION = [
   {
-    meta: '2024',
+    meta: '2022 - 2024',
     title: 'ISC, Class XII — Science',
     desc: "St. Thomas' Boys' School, Kidderpore, Kolkata. CISCE board. " +
           'Physics, Chemistry and Mathematics with Computer Science.',
@@ -38,7 +38,7 @@ window.EDUCATION = [
     tags: ['Web development', 'Applications', 'Security tooling']
   },
   {
-    meta: '2024 — Present',
+    meta: 'Ongoing',
     title: 'Roles at JIS University',
     desc: 'Class Representative, coordinating between students and faculty, ' +
           'and part of the Media Team creating posters, banners, and digital ' +
