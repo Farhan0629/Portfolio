@@ -108,6 +108,7 @@
   var boot = [
     ['navigation', window.initNav],
     ['cursor', window.initCursor],
+    ['bg-canvas', window.initBgCanvas],
     ['hero', window.initHero],
     ['projects', window.initProjects],
     ['services', window.initServices],
