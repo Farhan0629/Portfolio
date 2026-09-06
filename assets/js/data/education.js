@@ -18,9 +18,9 @@ window.EDUCATION = [
   {
     meta: '2024 — 2028',
     title: 'BTech, Computer Science & Engineering',
-    desc: 'JIS University, Kolkata. Specialising in cybersecurity — ' +
-          'coursework across data structures, computer networks, operating ' +
-          'systems, databases and applied security.',
+    desc: 'JIS University, Kolkata. Currently pursuing a B.Tech in Computer ' +
+          'Science and Engineering with a specialization in Cybersecurity, ' +
+          'with coursework covering core areas of computer science and computing.',
     tags: ['Cybersecurity specialisation', 'CGPA 9.05']
   },
   {
@@ -34,18 +34,16 @@ window.EDUCATION = [
     meta: '2024 — Present',
     title: 'Roles at JIS University',
     desc: 'Class Representative, coordinating between students and faculty, ' +
-          'and part of the Media Team producing posters, banners and digital ' +
-          'content for official university platforms.',
+          'and part of the Media Team creating posters, banners, and digital ' +
+          'content for university platforms.',
     tags: ['Class Representative', 'Media Team']
   },
   {
     meta: 'Ongoing',
-    title: 'Self-directed security work',
-    desc: 'Building the tools rather than only reading about them: a network ' +
-          'intrusion detection engine, a scanner for injection and ' +
-          'cross-site scripting, and a browser extension that blocks ' +
-          'malicious sites — all outside the syllabus.',
-    tags: ['Detection', 'Web app testing', 'Tooling']
+    title: 'Projects & Technical Work',
+    desc: 'Building practical projects across web development, applications, ' +
+          'and security tooling to apply what I learn beyond the syllabus.',
+    tags: ['Web development', 'Applications', 'Security tooling']
   }
 ];
 

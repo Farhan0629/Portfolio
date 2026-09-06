@@ -43,10 +43,12 @@ window.PERSONAL = {
      Read as "Currently ______". Each one points at something you have
      actually built, so nothing here overstates the work. */
   roles: [
-    'building web applications',
-    'writing security tooling',
-    'learning offensive security',
-    'breaking things on purpose',
-    'shipping side projects'
+    'Building web applications',
+    'Building mobile applications',
+    'Developing full-stack solutions',
+    'Creating practical software projects',
+    'Working with modern web technologies',
+    'Exploring cybersecurity',
+    'Learning and building every day'
   ]
 };

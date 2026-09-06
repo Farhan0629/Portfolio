@@ -19,9 +19,8 @@ window.SERVICES = [
   {
     icon: 'ri-code-s-slash-line',
     title: 'Web Development',
-    desc: 'I build responsive, fast websites and web apps from scratch — ' +
-          'semantic markup, a reusable component structure and a design ' +
-          'system rather than a pile of one-off styles.',
+    desc: 'Building responsive websites and web applications with a focus on ' +
+          'clean interfaces, usability, and maintainable code.',
     skills: [
       'Responsive layouts',
       'Component structure',
@@ -33,27 +32,10 @@ window.SERVICES = [
     tools: ['HTML', 'CSS', 'JavaScript', 'React', 'Vite', 'Git']
   },
   {
-    icon: 'ri-shield-keyhole-line',
-    title: 'Cybersecurity',
-    desc: 'Security work on things I own or am authorised to test: finding ' +
-          'weaknesses in web applications, understanding how an attack ' +
-          'chains together, and writing up fixes in plain language.',
-    skills: [
-      'Web app testing',
-      'SQL injection & XSS',
-      'Network reconnaissance',
-      'Port & service scanning',
-      'Traffic analysis',
-      'Findings write-ups'
-    ],
-    tools: ['Kali Linux', 'Nmap', 'Wireshark', 'Nikto', 'Python']
-  },
-  {
     icon: 'ri-server-line',
     title: 'Backend & APIs',
-    desc: 'REST APIs and the plumbing behind them — routes that are easy to ' +
-          'follow, input that is checked before it is trusted, and errors ' +
-          'that say something useful when they surface.',
+    desc: 'Building APIs and backend systems with clear structure, validated input, ' +
+          'database integration, and reliable error handling.',
     skills: [
       'REST API design',
       'Route & controller structure',
@@ -67,9 +49,8 @@ window.SERVICES = [
   {
     icon: 'ri-smartphone-line',
     title: 'Mobile & Cross-Platform',
-    desc: 'One project, two front ends: a Flutter app for Android alongside a ' +
-          'React web portal, sharing the same ideas so a small team can ship ' +
-          'on both without doubling the work.',
+    desc: 'Building mobile applications and cross-platform experiences with a ' +
+          'focus on practical functionality and a consistent user experience.',
     skills: [
       'Flutter interfaces',
       'Cross-platform state',
@@ -78,5 +59,20 @@ window.SERVICES = [
       'Voice & device APIs'
     ],
     tools: ['Flutter', 'Dart', 'React', 'Web Speech API']
+  },
+  {
+    icon: 'ri-shield-keyhole-line',
+    title: 'Cybersecurity',
+    desc: 'Cybersecurity is my area of specialization, and I’m continuing to build ' +
+          'my understanding of security, networks, applications, and secure development.',
+    skills: [
+      'Network fundamentals',
+      'Traffic analysis',
+      'Web application security',
+      'Vulnerability analysis',
+      'Secure coding practices',
+      'Security documentation'
+    ],
+    tools: ['Kali Linux', 'Nmap', 'Wireshark', 'Nikto', 'Python']
   }
 ];

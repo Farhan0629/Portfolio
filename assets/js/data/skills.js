@@ -25,7 +25,7 @@ window.SKILLS = [
   {
     icon: 'ri-code-s-slash-line',
     title: 'Languages',
-    blurb: 'The languages I reach for, from systems coursework to the web.',
+    blurb: 'Languages I use for development and coursework.',
     items: [
       { name: 'C',          slug: 'c',          brand: '#A8B9CC' },
       { name: 'C++',        slug: 'cplusplus',  brand: '#00599C' },
@@ -37,7 +37,7 @@ window.SKILLS = [
   {
     icon: 'ri-window-line',
     title: 'Frontend & Mobile',
-    blurb: 'Interfaces that stay fast, readable and usable on every screen.',
+    blurb: 'Building responsive and interactive interfaces across web and mobile.',
     items: [
       { name: 'HTML5',   slug: 'html5', brand: '#E34F26' },
       { name: 'CSS',     slug: 'css',   alt: 'css3', brand: '#1572B6' },
@@ -48,26 +48,9 @@ window.SKILLS = [
     ]
   },
   {
-    icon: 'ri-shield-keyhole-line',
-    title: 'Cybersecurity',
-    blurb: 'My main focus: how systems fail, and how to make them fail less.',
-    featured: true,
-    items: [
-      { name: 'Kali Linux', slug: 'kalilinux', brand: '#557C94' },
-      { name: 'Nmap',       slug: 'nmap' },
-      { name: 'Wireshark',  slug: 'wireshark', brand: '#1679A7' },
-      { name: 'Nikto',              ri: 'ri-scan-2-line' },
-      { name: 'OSINT',              ri: 'ri-search-eye-line' },
-      { name: 'Networking',         ri: 'ri-router-line' },
-      { name: 'Web security',       ri: 'ri-bug-line' },
-      { name: 'Packet analysis',    ri: 'ri-pulse-line' },
-      { name: 'Intrusion detection', ri: 'ri-radar-line' }
-    ]
-  },
-  {
     icon: 'ri-tools-line',
     title: 'Backend & Tooling',
-    blurb: 'APIs, servers and the everyday kit around them.',
+    blurb: 'Building APIs, backend systems, and development workflows.',
     items: [
       { name: 'Node.js',    slug: 'nodedotjs', alt: 'nodejs', brand: '#5FA04E' },
       { name: 'Express',    slug: 'express' },
@@ -78,6 +61,23 @@ window.SKILLS = [
       { name: 'Linux',      slug: 'linux',      brand: '#FCC624' },
       { name: 'VirtualBox', slug: 'virtualbox', brand: '#2F61B4' },
       { name: 'VMware',     slug: 'vmware',     brand: '#607078' }
+    ]
+  },
+  {
+    icon: 'ri-shield-keyhole-line',
+    title: 'Cybersecurity',
+    blurb: 'Cybersecurity is my academic specialization, with a growing interest ' +
+           'in application security, networks, secure development, and security fundamentals.',
+    items: [
+      { name: 'Kali Linux', slug: 'kalilinux', brand: '#557C94' },
+      { name: 'Nmap',       slug: 'nmap' },
+      { name: 'Wireshark',  slug: 'wireshark', brand: '#1679A7' },
+      { name: 'Nikto',              ri: 'ri-scan-2-line' },
+      { name: 'OSINT',              ri: 'ri-search-eye-line' },
+      { name: 'Networking',         ri: 'ri-router-line' },
+      { name: 'Web security',       ri: 'ri-bug-line' },
+      { name: 'Packet analysis',    ri: 'ri-pulse-line' },
+      { name: 'Intrusion detection', ri: 'ri-radar-line' }
     ]
   }
 ];
