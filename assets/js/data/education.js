@@ -16,6 +16,13 @@
 
 window.EDUCATION = [
   {
+    meta: '2024',
+    title: 'ISC, Class XII — Science',
+    desc: "St. Thomas' Boys' School, Kidderpore, Kolkata. CISCE board. " +
+          'Physics, Chemistry and Mathematics with Computer Science.',
+    tags: ['ISC 77.25%', 'ICSE 82.0%']
+  },
+  {
     meta: '2024 — 2028',
     title: 'BTech, Computer Science & Engineering',
     desc: 'JIS University, Kolkata. Currently pursuing a B.Tech in Computer ' +
@@ -24,11 +31,11 @@ window.EDUCATION = [
     tags: ['Cybersecurity specialisation', 'CGPA 9.05']
   },
   {
-    meta: '2024',
-    title: 'ISC, Class XII — Science',
-    desc: "St. Thomas' Boys' School, Kidderpore, Kolkata. CISCE board. " +
-          'Physics, Chemistry and Mathematics with Computer Science.',
-    tags: ['ISC 77.25%', 'ICSE 82.0%']
+    meta: 'Ongoing',
+    title: 'Projects & Technical Work',
+    desc: 'Building practical projects across web development, applications, ' +
+          'and security tooling to apply what I learn beyond the syllabus.',
+    tags: ['Web development', 'Applications', 'Security tooling']
   },
   {
     meta: '2024 — Present',
@@ -37,13 +44,6 @@ window.EDUCATION = [
           'and part of the Media Team creating posters, banners, and digital ' +
           'content for university platforms.',
     tags: ['Class Representative', 'Media Team']
-  },
-  {
-    meta: 'Ongoing',
-    title: 'Projects & Technical Work',
-    desc: 'Building practical projects across web development, applications, ' +
-          'and security tooling to apply what I learn beyond the syllabus.',
-    tags: ['Web development', 'Applications', 'Security tooling']
   }
 ];
 
